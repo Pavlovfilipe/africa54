@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Menu */
+.menu {
+  background: #183D30;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 40px;
+}
+
+.logo h2{
+  color: #F4C66A;
+}
+
+.menu nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 30px;
+  padding-bottom: 8px;
+}
+
+
+/* Hero com imagem de fundo */
+.hero {
+  position: relative;               /* para a camada escura se posicionar dentro dele */
+  min-height: 320px;
+  background-image: url("/ASSETS/img/maurícias/maurit\ bel.jpeg");
+  background-size: cover;           /* a imagem cobre toda a área */
+  background-position: center;      /* centra a imagem */
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;              /* centra o texto na vertical */
+  color: #fff;
+}
+
+/* Camada escura por cima da imagem */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;                         /* top/right/bottom/left = 0 */
+  background: linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.15));
+}
+
+/* Texto por cima da camada */
+.hero-conteudo {
+  position: relative;               /* fica acima do ::before */
+  z-index: 1;
+  padding: 0 60px;
+}
+
+.hero .voltar {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.hero .etiqueta {
+  display: block;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: 56px;
+  margin: 6px 0 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 50px;
+  background: #f7f3ee;
+}
+
+.breadcrumb { text-decoration: none; color: #222; font-size: 14px; }
+
+/* Ficha + texto lado a lado */
+.sobre-layout {
+  display: flex;
+  flex-wrap: wrap;      /* se não couber, quebra para baixo */
+  gap: 40px;
+  margin: 24px 0 40px;
+}
+
+.ficha {
+  flex: 0 0 340px;      /* não cresce, não encolhe, base 340px */
+  background: #ece6dc;
+  border-radius: 12px;
+  padding: 24px;
+}
+.bandeira { width: 90px; border-radius: 8px; margin-bottom: 20px; }
+.ficha ul { list-style: none; }
+.ficha li { display: flex; gap: 20px; align-items: center; margin-bottom: 22px; }
+.ficha i { font-size: 22px; width: 28px; text-align: center; }
+.ficha span { display: block; font-size: 14px; }
+
+.texto { flex: 1 1 400px; }   /* ocupa o espaço que sobra */
+.texto h2 { font-family: Georgia, serif; margin-bottom: 10px; }
+.texto > p { margin-bottom: 30px; line-height: 1.6; color: #444; }
+
+.cultura { display: flex; flex-wrap: wrap; gap: 20px; }
+.cultura img { flex: 0 0 210px; width: 210px; border-radius: 10px; object-fit: cover; }
+.cultura p { flex: 1 1 250px; line-height: 1.6; color: #444; }
+
+/* Cartões */
+.cartoes { display: flex; flex-wrap: wrap; gap: 24px; }
+
+.cartao {
+  flex: 1 1 260px;       /* cresce, encolhe, base 260px */
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+.cartao img { width: 100%; height: 180px; object-fit: cover; }
+.cartao-corpo { display: flex; flex-direction: column; flex: 1; padding: 18px; }
+.cartao-corpo h3 { font-family: Georgia, serif; margin-bottom: 8px; }
+.cartao-corpo p { color: #555; line-height: 1.5; margin-bottom: 16px; }
+.cartao-corpo a { margin-top: auto; color: #b5542a; font-size: 14px; text-decoration: none; }
+
+/* Telemóvel: ficha ocupa a largura toda */
+@media (max-width: 700px) {
+  .ficha { flex: 1 1 100%; }
+}
+
+.rodape { background: #111; color: #fff; }
+
+.rodape-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.rodape-logo { font-family: Georgia, serif; font-size: 22px; }
+
+.redes { display: flex; gap: 18px; }
+.redes a { color: #fff; font-size: 22px; transition: color .2s; }
+.redes a:hover { color: #d4a24c; }
+
+/* Padrão decorativo gerado em SVG, sem ficheiros */
+.padrao {
+  height: 28px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='28' viewBox='0 0 40 28'%3E%3Cpath d='M0 14 10 2 20 14 30 2 40 14M0 26 10 14 20 26 30 14 40 26' fill='none' stroke='%23b8863b' stroke-width='1.5'/%3E%3C/svg%3E") repeat-x;
+}
+
+@media (max-width: 600px) {
+  .rodape-conteudo { justify-content: center; text-align: center; }
+}
+
+
